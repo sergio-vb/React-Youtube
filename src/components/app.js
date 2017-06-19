@@ -17,7 +17,7 @@ export default class App extends React.Component {
 			videos: []
 		};
 
-		this.searchYoutube("Mazda Mx-5 2016");
+		this.searchYoutube("Mazda Mx-5 2016 red");
 	}
 
 	searchYoutube(searchTerm){

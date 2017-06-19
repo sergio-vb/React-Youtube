@@ -9,11 +9,15 @@ export default class VideoListItem extends React.Component{
 		const snippet = this.props.video.snippet;
 
 		return (
-			<li className="videoListItem" >
-				<img src={snippet.thumbnails.default.url} alt=""/>
-				<div>
-					<h3>{snippet.title}</h3>
-					<p>{snippet.channelTitle}</p>
+			<li className="list-group-item">
+				<div className="video-list media">
+					<div className="media-left">
+						<img src={snippet.thumbnails.default.url} alt="" className="media-object"/>
+					</div>
+					<div className="media-body">
+						<div className="media-heading">{snippet.title}</div>
+						<p>{snippet.channelTitle}</p>
+					</div>
 				</div>
 			</li>
 		);
