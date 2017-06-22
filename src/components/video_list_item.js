@@ -4,8 +4,6 @@ export default class VideoListItem extends React.Component{
 
 	render(){
 
-		console.log("Video List Item props:", this.props.video);
-
 		const snippet = this.props.video.snippet;
 
 		return (

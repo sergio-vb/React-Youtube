@@ -23,7 +23,6 @@ export default class SearchBar extends React.Component{
 	}
 
 	onInputChange(ev){
-		console.log("Value changed:", ev.target.value);
 		this.setState({searchTerm: ev.target.value});
 	}
 

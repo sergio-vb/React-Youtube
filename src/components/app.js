@@ -16,8 +16,10 @@ export default class App extends React.Component {
 			featuredImage: "",
 			videos: []
 		};
+	}
 
-		this.searchYoutube("Mazda Mx-5 2016 red");
+	componentDidMount(){
+		this.searchYoutube("Mazda Mx-5 2016 does it get");
 	}
 
 	searchYoutube(searchTerm){
@@ -26,8 +28,6 @@ export default class App extends React.Component {
 				featuredImage: videos[0].snippet.thumbnails.high.url,
 				videos
 			});
-
-			console.log("Videos:", videos);
 		});
 	}
 
@@ -38,13 +38,13 @@ export default class App extends React.Component {
 	      	<SearchBar searchYoutube={this.searchYoutube.bind(this)} />
 	      	<br />
 
-	      	<VideoDetail>
-	      		<img src={this.state.featuredImage} alt=""/>
-	      	</VideoDetail>
+	      	<VideoDetail video={this.state.videos[0]} />
 
 	      	<VideoList videos={this.state.videos} />
 	      	
 	      </div>
 	    );
 	}
+
+
 }
