@@ -14,7 +14,8 @@ export default class App extends React.Component {
 		super(props);
 		this.state = {
 			featuredImage: "",
-			videos: []
+			videos: [],
+			selectedVideo: null
 		};
 	}
 
@@ -26,23 +27,25 @@ export default class App extends React.Component {
 		YTSearch({key: API_KEY, term: searchTerm}, (videos) => {
 			this.setState({
 				featuredImage: videos[0].snippet.thumbnails.high.url,
-				videos
+				videos,
+				selectedVideo: videos[0]
 			});
+		});
+	}
+
+	setSelectedVideo(video){
+		this.setState({
+			selectedVideo: video
 		});
 	}
 
 	render() {
 	    return (
-	      <div>
-	      	<h2>React simple starter</h2>
-	      	<SearchBar searchYoutube={this.searchYoutube.bind(this)} />
-	      	<br />
-
-	      	<VideoDetail video={this.state.videos[0]} />
-
-	      	<VideoList videos={this.state.videos} />
-	      	
-	      </div>
+			<div>
+				<SearchBar searchYoutube={this.searchYoutube.bind(this)} />
+				<VideoDetail video={this.state.selectedVideo} />
+				<VideoList videos={this.state.videos} setSelectedVideo={this.setSelectedVideo.bind(this)} />
+			</div>
 	    );
 	}
 

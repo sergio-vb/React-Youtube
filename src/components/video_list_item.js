@@ -6,9 +6,13 @@ export default class VideoListItem extends React.Component{
 
 		const snippet = this.props.video.snippet;
 
+		const listItemStyle = {
+			cursor: "pointer"
+		}
+
 		return (
 			<li className="list-group-item">
-				<div className="video-list media">
+				<div className="video-list media" onClick={this.onListItemClick.bind(this)} style={listItemStyle}>
 					<div className="media-left">
 						<img src={snippet.thumbnails.default.url} alt="" className="media-object"/>
 					</div>
@@ -19,5 +23,9 @@ export default class VideoListItem extends React.Component{
 				</div>
 			</li>
 		);
+	}
+
+	onListItemClick(){
+		this.props.setSelectedVideo(this.props.video);
 	}
 }
