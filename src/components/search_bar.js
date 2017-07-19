@@ -9,22 +9,19 @@ export default class SearchBar extends React.Component{
 
 	render(){
 		return (
-			<div className="search-bar">
-				<input
+			<div className="search-bar input-group">
+				<span className="input-group-btn">
+					<button className="btn btn-secondary" type="button" onClick={this.onButtonClick.bind(this)}>Go!</button>
+				</span>
+				<input type="text" className="form-control" placeholder="Search for..."
 					value={this.state.searchTerm} //Controlled components: it's a form element whose value is set by the state
 					onChange={this.onInputChange.bind(this)} />
-				{/*<p>The inputs value is: {this.state.searchTerm}</p>
-
-				<button onClick={this.onButtonClick.bind(this)}>Search Youtube</button>*/}
-
-				
 			</div>
 		);
 	}
 
 	onInputChange(ev){
 		this.setState({searchTerm: ev.target.value});
-		this.props.searchYoutube(this.state.searchTerm);
 	}
 
 	onButtonClick(ev){
