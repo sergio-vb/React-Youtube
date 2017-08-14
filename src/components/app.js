@@ -31,6 +31,7 @@ export default class App extends React.Component {
 				videos,
 				selectedVideo: videos[0]
 			});
+			console.log("Search results:", videos);
 		});
 	}
 

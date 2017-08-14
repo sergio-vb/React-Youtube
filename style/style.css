@@ -18,13 +18,26 @@ li{
 .video-detail .details{
 	margin-top: 10px;
 	padding: 10px;
-	border: 1px solid #ddd;
-	border-radius: 4px;
+	/* border: 1px solid #ddd;
+	border-radius: 4px; */
 }
 .list-group-item{
 	cursor: pointer;
+	border: none;
 }
 
 .list-group-item:hover{
 	background-color: #ccc;
+}
+
+.media-heading{
+    font-weight: bold;
+    font-size: 0.94em;
+    line-height: 1.14em;
+    max-height: 2.3em;
+    overflow: hidden;
+}
+.media-body p {
+    font-size: 0.85em;
+    color: #888;
 }
